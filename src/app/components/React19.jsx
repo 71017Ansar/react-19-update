@@ -1,20 +1,20 @@
-import React from 'react'
+"use client";
+export default function MyButton() {
+  const handleClick = (event,message) => {
+    alert (message)
+    console.log("Button clicked", event.target);
+  };
 
-export default function React19() {
-    const name = 'John';
-    const age = 30;
-    function sayHello() {
-         let name = 'Jane';
-        let   age= 30;
-        return <h1>Hello {name}and age is {age}</h1>
-    }
+ 
+
   return (
     <div>
-        <h1>React 19</h1>
-        <p>My name is {name}</p>
-        <h2>{sayHello()}</h2>
-        <span>{ age<18 ? "ansar" : "Guest"}</span>
+      <button onClick={(event)=>handleClick(event,"hello failler boy ")}>Click Me</button>
+
+      <div>
+        {/* ✅ Pass the event object correctly */}
       
+      </div>
     </div>
-  )
+  );
 }
