@@ -1,20 +1,32 @@
-"use client";
-export default function MyButton() {
-  const handleClick = (event,message) => {
-    alert (message)
-    console.log("Button clicked", event.target);
-  };
+// "use client";
+// import { useState } from "react";
+
+// export default function MyButton() {
+//   const [text,setText]=useState("");
+
+//   const handleChange=(e)=>{
+
+//     setText(e.target.value);
+//     console.log(text);
+//   }
+ 
 
  
 
-  return (
-    <div>
-      <button onClick={(event)=>handleClick(event,"hello failler boy ")}>Click Me</button>
+//   return (
+//     <div>
+//       <input type="text" value={text} onChange={handleChange} />
+//       <p>{text}</p>
+//     </div>
+//   );
+// }
 
-      <div>
-        {/* ✅ Pass the event object correctly */}
-      
-      </div>
+
+export  const Children=({onClick})=>{
+  return(
+    <div>
+      <h1>Children</h1>
+      <button onClick={onClick}>Click Me</button>
     </div>
-  );
+  )
 }
