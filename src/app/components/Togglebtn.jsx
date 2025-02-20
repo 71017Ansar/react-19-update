@@ -67,3 +67,22 @@ export function TodoList2() {
     </div>
   );
 }
+
+
+
+export  function Searchbar() {
+  const [search, setSearch] = useState("");
+  const users = ["Alice", "Bob", "Charlie", "David", "Eva"];
+
+  const filteredUsers = users.filter(user => user.toLowerCase().includes(search.toLowerCase()));
+
+  return (
+    <div>
+      <input type="text" placeholder="Search user..." onChange={(e) => setSearch(e.target.value)} />
+      <ul>
+        {filteredUsers.map((user, index) => <li key={index}>{user}</li>)}
+      </ul>
+    </div>
+  );
+}
+

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React19 from "./components/React19";
-import Togglebtn, { Counter, TodoList, TodoList2} from "./components/Togglebtn";
+import Togglebtn, { Counter, TodoList, TodoList2, Searchbar} from "./components/Togglebtn";
 
 
 
@@ -12,6 +12,8 @@ export default function Home() {
       <Counter />
       <TodoList />
       <TodoList2/>
+      <Searchbar/>
+      <Searchbar/>
     </div>
   );
 }
