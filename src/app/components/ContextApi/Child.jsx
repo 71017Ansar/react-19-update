@@ -1,4 +1,9 @@
 // Child.js
+"use client"
+
+
+
+
 import React, { useContext } from "react";
 import { Biocontext } from "./Mycontext"; // Import the context object
 

@@ -1,4 +1,6 @@
 // Home.js
+"use client";
+
 import Image from "next/image";
 import React19 from "./components/React19";
 import Togglebtn, { Counter, TodoList, TodoList2, Searchbar } from "./components/Togglebtn";
