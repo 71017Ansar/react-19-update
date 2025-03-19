@@ -1,27 +1,12 @@
-// "use client";
-// import { useState } from "react";
+import Gcsform from './Gcsform';
 
-// export default function MyButton() {
-//   const [text,setText]=useState("");
-
-//   const handleChange=(e)=>{
-
-//     setText(e.target.value);
-//     console.log(text);
-//   }
- 
-
- 
-
-//   return (
-//     <div>
-//       <input type="text" value={text} onChange={handleChange} />
-//       <p>{text}</p>
-//     </div>
-//   );
-// }
-
-
+export default function React19() {
+  return (
+    <div className="w-full">
+      <Gcsform />
+    </div>
+  );
+}
 export  const Children=({onClick})=>{
   return(
     <div>
