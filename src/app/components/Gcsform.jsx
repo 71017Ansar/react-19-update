@@ -18,7 +18,7 @@ export default function Gcsform() {
     fatherOccupation: "",
     email: "",
     course: "Associate Degree in Commerce (I.Com) 2 Years",
-    // Academic Records
+    
     matricMarks: "",
     matricYear: "",
     matricRollNo: "",
@@ -73,9 +73,56 @@ export default function Gcsform() {
       <form onSubmit={handleSubmit} className="space-y-6">
 
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Course</label>
-          <div className="p-4 bg-gray-50 rounded-md">
-            <p className="text-gray-800 font-medium">Associate Degree in Commerce (I.Com) 2 Years</p>
+          <label className="block text-sm font-medium text-gray-700 mb-2"> Select Your Course</label>
+          <div className="p-4 bg-gray-50 rounded-md flex flex-col">
+            {/* <p className="text-gray-800 font-medium">Associate Degree in Commerce (I.Com) 2 Years</p> */}
+            <select name="" id="" >
+               <option value=""> Select Course</option>
+              <option value="" >BBA</option>
+              <option value=""> Botany</option>
+              <option value=""> Bio. Tech</option>
+              <option value=""> Chemistry</option>
+              <option value=""> Economic</option>
+              <option value=""> Communicatin Study</option>
+              <option value=""> B.ED</option>
+              <option value="">English</option>
+              <option value="">Geography</option>
+              <option value="">Zoology</option>
+              <option value="">Urdu</option>
+              <option value="">Statistics</option>
+              <option value="">Scoloigy</option>
+              <option value="">Pol. Science</option>
+              <option value="">Physics</option>
+              <option value="">Mathematis</option>
+              <option value="">BS Computer Science</option>
+              <option value="">Isl.Edu</option>
+              
+            </select>
+          </div>
+          <div className="mt-4 space-y-2">
+            <label htmlFor="shift" className="block text-sm font-medium text-gray-700">Select Shift</label>
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center">
+                <input
+                  type="radio"
+                  id="morning"
+                  name="shift"
+                  value="Morning"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
+                />
+                <label htmlFor="morning" className="ml-2 text-sm text-gray-700 cursor-pointer hover:text-gray-900">Morning</label>
+              </div>
+              <div className="flex items-center">
+                <input
+                  type="radio"
+                  id="afternoon"
+                  name="shift"
+                  value="Afternoon"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
+                />
+                <label htmlFor="afternoon" className="ml-2 text-sm text-gray-700 cursor-pointer hover:text-gray-900">Afternoon</label>
+              </div>
+            </div>
           </div>
         </div>
 
