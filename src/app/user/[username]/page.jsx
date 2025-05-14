@@ -137,7 +137,7 @@ export default function page() {
             </div>
             <div className="flex items-center gap-2">
               <span className="font-medium text-gray-700 dark:text-gray-300">Role:</span>
-              <Badge className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Admin</Badge>
+              <Badge className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">ansar</Badge> Admin
             </div>
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
