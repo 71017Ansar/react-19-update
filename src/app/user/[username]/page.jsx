@@ -24,6 +24,9 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import EditUser from "@/components/EditUser";
+import { Avatar } from "@radix-ui/react-avatar";
+import { AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AppLineChart } from "@/components/AppLineChart";
 
 export default function page() {
   return (
@@ -169,34 +172,30 @@ export default function page() {
           <CardList title={"Recent Transactions"} />
         </div>
       </div>
-
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-6">
-        {/* User Card */}
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-          <h1 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">User Profile</h1>
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <div className="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-              <span className="text-2xl font-semibold text-gray-500 dark:text-gray-400">JD</span>
+         <div className="w-full xl:w-2/3 space-y-6">
+          {/* USER CARD CONTAINER */}
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
+                <AvatarImage src="https://avatars.githubusercontent.com/u/1486366" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">John Doe</h1>
             </div>
-            <div className="space-y-2">
-              <h2 className="text-lg font-medium text-gray-900 dark:text-white">John Doe</h2>
-              <p className="text-gray-600 dark:text-gray-300">Administrator</p>
-              <div className="flex gap-2">
-                <Badge className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Verified</Badge>
-                <Badge className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Premium</Badge>
-              </div>
-            </div>
+            <p className="text-sm text-muted-foreground">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel
+              voluptas distinctio ab ipsa commodi fugiat labore quos veritatis
+              cum corrupti sed repudiandae ipsum, harum recusandae ratione ipsam
+              in, quis quia.
+            </p>
+          </div>
+          {/* CHART CONTAINER */}
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <h1 className="text-xl font-semibold">User Activity</h1>
+            <AppLineChart />
           </div>
         </div>
-
-        {/* Chart Card */}
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-          <h1 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Activity Chart</h1>
-          <div className="h-64 bg-gray-100 dark:bg-gray-700 rounded flex items-center justify-center">
-            <p className="text-gray-500 dark:text-gray-400">Chart will be displayed here</p>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 }

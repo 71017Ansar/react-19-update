@@ -1,29 +1,43 @@
-"use client"
-import React from "react";
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod";
+"use client";
 import {
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
+} from "./ui/sheet";
 import { useForm } from "react-hook-form";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const formSchema = z.object({
-  username: z.string(),
-  email: z.string(),
-  phone: z.string(),
-  location: z.string(),
+  username: z.string().min(2).max(50),
+  email: z.string().email(),
+  phone: z.string().min(10).max(15),
+  location: z.string().min(2).max(50),
   role: z.enum(["admin", "user"]),
-})
+});
 
 export default function EditUser() {
   const form = useForm({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       username: "Jhon doe",
       email: "jhon.doe@gmail.com",
@@ -31,18 +45,20 @@ export default function EditUser() {
       location: "New York",
       role: "admin",
     },
-  })
+  });
 
-  console.log("form == "+form);
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <SheetContent>
-      <SheetHeader>
+      <SheetHeader >
         <SheetTitle>Edit User</SheetTitle>
         <SheetDescription>Update the user details below.</SheetDescription>
       </SheetHeader>
       <Form {...form}>
-        <form  className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             control={form.control}
             name="username"
@@ -52,6 +68,7 @@ export default function EditUser() {
                 <FormControl>
                   <Input placeholder="Enter username" {...field} />
                 </FormControl>
+
                 <FormMessage />
               </FormItem>
             )}
@@ -102,16 +119,21 @@ export default function EditUser() {
               <FormItem>
                 <FormLabel>Role</FormLabel>
                 <FormControl>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select role" />
+                  <Select>
+                    <SelectTrigger className="w-[180px]">
+                      <SelectValue placeholder="Role" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="admin">Admin</SelectItem>
-                      <SelectItem value="user">User</SelectItem>
+                      <SelectItem value="user"> user</SelectItem>
+                      {/* <SelectItem value="system">System</SelectItem> */}
                     </SelectContent>
                   </Select>
                 </FormControl>
+
+                <FormDescription>
+                  Only verified users can be admin.
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
