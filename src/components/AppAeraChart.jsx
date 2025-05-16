@@ -28,7 +28,7 @@ export default function AppAeraChart() {
   return (
     <div>
       <h1>AppBarChart</h1>
-      <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+      <ChartContainer config={chartConfig} className="">
         <AreaChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
           <XAxis

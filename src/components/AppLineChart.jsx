@@ -41,7 +41,7 @@ export function AppLineChart() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Line Chart - Multiple</CardTitle>
+        <CardTitle>SHADCN UI MS</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>

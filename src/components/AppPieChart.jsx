@@ -55,7 +55,7 @@ export default function AppPieChart() {
   const totalVisitors = chartData.reduce((acc, curr) => acc + curr.visitors, 0);
 
   return (
-    <div className="w-full max-w-md mx-auto p-4 bg-white dark:bg-black rounded-xl shadow">
+    <div className="  p-4 bg-white dark:bg-black rounded-xl shadow">
       <h1 className="text-center text-xl font-semibold mb-4">Total Visitors</h1>
 
       <ChartContainer config={chartConfig} className="aspect-square">

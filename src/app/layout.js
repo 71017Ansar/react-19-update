@@ -7,15 +7,15 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { cookies } from "next/headers";
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -28,7 +28,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en"  suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex antialiased`}
+        className=""
       >
         <ThemeProvider
              attribute="class"
@@ -38,10 +38,10 @@ export default async function RootLayout({ children }) {
           >
           <SidebarProvider defaultOpen={defaultOpen}>
         <AppSiderbar />
-        <main className="w-full">
+        <main className="">
           <Navbar />
           
-          <div className=" px-4 ">{children}</div>
+          <div className=" ">{children}</div>
           
         </main>
         </SidebarProvider>

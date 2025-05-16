@@ -27,7 +27,7 @@ export default function AppBarChart() {
   return (
     <div>
       <h1>AppBarChart</h1>
-      <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+      <ChartContainer config={chartConfig} className="">
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
           <XAxis
